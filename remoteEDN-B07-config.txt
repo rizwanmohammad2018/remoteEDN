@@ -1,0 +1,26 @@
+BL-07 config sample/example 
+
+    sdp 123 mpls create
+            signaling off
+            far-end 172.30.22.11
+            bgp-tunnel
+            keep-alive
+                shutdown
+            exit
+            no shutdown
+        exit
+ 
+epipe 123 customer 1 create
+            sap lag-24:123 create
+                no shutdown
+            exit
+            spoke-sdp 123:123 create (sdp:vlan)
+                ingress
+                    vc-label 123
+                exit
+                egress
+                    vc-label 123
+                exit
+                no shutdown
+            exit
+            no shutdown
