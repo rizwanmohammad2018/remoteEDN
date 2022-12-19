@@ -14,13 +14,7 @@ epipe 123 customer 1 create
             sap lag-24:123 create
                 no shutdown
             exit
-            spoke-sdp 123:123 create (sdp:vlan)
-                ingress
-                    vc-label 123
-                exit
-                egress
-                    vc-label 123
-                exit
+            spoke-sdp 123:123 create
                 no shutdown
             exit
             no shutdown
